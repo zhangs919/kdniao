@@ -24,7 +24,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Laravelvip\\Kdniao": "src"
+            "Laravelvip\\Kdniao\\": "src"
         }
     }
 }
