@@ -8,20 +8,13 @@ use Laravelvip\Kdniao\Exceptions\InvalidArgumentException;
 
 class Base
 {
-    // 正式地址
-    protected $api = 'http://api.kdniao.com/api/dist';
-
-    // 测试地址
-//    protected $api = 'http://sandboxapi.kdniao.com:8080/kdniaosandbox/gateway/exterfaceInvoke.json';
-
     protected $app_id;
     protected $app_key;
 
     protected $guzzleOptions = [];
 
-    public function __construct($app_id = null, $app_key = null, $api = null)
+    public function __construct()
     {
-        $api = $this->api;
         $app_id = config('kdniao.app_id');
         $app_key = config('kdniao.app_key');
 
@@ -33,7 +26,6 @@ class Base
             throw new InvalidArgumentException('APP key Can not be empty');
         }
 
-        $this->api = $api;
         $this->app_id = $app_id;
         $this->app_key = $app_key;
     }

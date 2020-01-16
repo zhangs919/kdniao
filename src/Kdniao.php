@@ -20,9 +20,15 @@ class Kdniao extends Base
      * @return string
      * @throws InvalidArgumentException
      * @throws HttpException
+     *
+     * API测试地址：http://sandboxapi.kdniao.com:8080/kdniaosandbox/gateway/exterfaceInvoke.json
+      API正式地址：http://api.kdniao.com/api/EOrderService
      */
     public function track($tracking_code = '', $shipping_code = '', $order_code = '')
     {
+        $api = 'http://api.kdniao.com/api/dist';
+        $dev_api = 'http://sandboxapi.kdniao.com:8080/kdniaosandbox/gateway/exterfaceInvoke.json';
+
         if (empty($tracking_code)) {
             throw new InvalidArgumentException('TrackingCode is required');
         }
@@ -53,7 +59,7 @@ class Kdniao extends Base
         );
 
         try {
-            $response = $this->getHttpClient()->request('POST', $this->api, [
+            $response = $this->getHttpClient()->request('POST', $api, [
                 'form_params' => $post
             ])->getBody()->getContents();
         } catch (GuzzleException $e) {
@@ -63,4 +69,11 @@ class Kdniao extends Base
         return $response;
     }
 
+    public function sheet()
+    {
+        $api = 'http://api.kdniao.com/api/EOrderService';
+        $dev_api = 'http://sandboxapi.kdniao.com:8080/kdniaosandbox/gateway/exterfaceInvoke.json';
+
+
+    }
 }
