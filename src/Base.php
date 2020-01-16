@@ -19,11 +19,12 @@ class Base
 
     protected $guzzleOptions = [];
 
-    public function __construct($app_id, $app_key, $api = null)
+    public function __construct()
     {
-        if (!$api) {
-            $api = $this->api;
-        }
+        $api = $this->api;
+        $app_id = config('kdniao.app_id');
+        $app_key = config('kdniao.app_key');
+
         if (empty($app_id)) {
             throw new InvalidArgumentException('APP Id Can not be empty');
         }
