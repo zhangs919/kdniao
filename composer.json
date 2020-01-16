@@ -1,0 +1,30 @@
+{
+    "name": "laravelvip/kdniao",
+    "description": "快递鸟下单类、查询类、增值类接口 SDK",
+    "keywords": ["快递鸟", "kdniao", "express"],
+    "type": "library",
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/zhangs919/kdniao/issues",
+        "source": "https://github.com/zhangs919/kdniao"
+    },
+    "authors": [
+        {
+            "name": "laravelvip",
+            "email": "290648237@qq.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1.3",
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.5",
+        "mockery/mockery": "^1.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Laravelvip\\Kdniao": "src"
+        }
+    }
+}
