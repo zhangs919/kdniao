@@ -11,7 +11,6 @@ use Laravelvip\Kdniao\Exceptions\InvalidArgumentException;
 class Kdniao extends Base
 {
 
-
     /************ 查询类 ************/
     /**
      * 快递查询

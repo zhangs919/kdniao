@@ -19,7 +19,7 @@ class Base
 
     protected $guzzleOptions = [];
 
-    public function __construct()
+    public function __construct($app_id = null, $app_key = null, $api = null)
     {
         $api = $this->api;
         $app_id = config('kdniao.app_id');
